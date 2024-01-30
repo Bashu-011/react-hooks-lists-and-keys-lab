@@ -2,12 +2,17 @@ import React from "react";
 
 function ProjectItem({ name, about, technologies }) {
   return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
-      <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
-      </div>
+  <div className="project-item">
+  <h3>{name}</h3>
+  <p>{about}</p>
+      {/**
+       * prop is basically the number/position of the technology
+       * 
+       */}
+    <div className="technologies">
+    {technologies.map((technology, prop) => (
+    <span key={prop}>{technology}</span>))}
+    </div>
     </div>
   );
 }
